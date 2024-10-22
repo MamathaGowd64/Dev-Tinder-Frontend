@@ -1,0 +1,5 @@
+-npm init
+-git init 
+-install tailwind
+-daisy ui library(to pre build components)
+-add navbar to app.jsx
