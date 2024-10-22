@@ -8,6 +8,12 @@
 -create browser router->Routes->route=/ Body->route children
 -creating outlet in body component
 
+-to access data from one port (domain) to another port(domain)
+-install cors in backend(app.js) and set up cookies at browser ->cors operations(origin: we have to put out front end domain url and credentials true)
+-at fronend at axios call {withCredentials:true}
+-install redux-toolkit(documentation)
+-install react-redux 
+-create configureStore=>Provider=>createSlice=>add reducer to reducer
 
 
 

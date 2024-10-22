@@ -5,7 +5,7 @@ import Footer from './Footer'
 
 const Body = () => {
   return (
-    <div>
+    <div className='bg-slate-500'>
           <NavBar />
           <Outlet />
           <Footer/>
