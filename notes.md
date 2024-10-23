@@ -14,6 +14,10 @@
 -install redux-toolkit(documentation)
 -install react-redux 
 -create configureStore=>Provider=>createSlice=>add reducer to reducer
+-we should not be able to access other routes without login
+-if token is not present, redirect to login
+-logout
+-profile
 
 
 
