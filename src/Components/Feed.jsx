@@ -8,14 +8,15 @@ import Usercard from './Usercard'
 const Feed = () => {
   const dispatch = useDispatch();
   const feed = useSelector(store => store?.feed);
- console.log(feed?.data[0])
+  
+  console.log(feed)
   const getFeed = async () => {
-    if (feed) return;
+    // if (feed) return;
     try {
       const res = await axios.get(BASE_URL + "/feed", {
         withCredentials: true,
       })
-      dispatch(addFeed(res.data));
+      dispatch(addFeed(res?.data?.data));
     }
     catch (err) {
       console.log(err.message);
@@ -25,14 +26,16 @@ const Feed = () => {
   useEffect(() => {
     getFeed();
   }, [])
+
+  if (!feed) return;
+  if(feed.length<=0) return <h1 className='flex justify-center text-bold text-2xl'>No Requests Found</h1>
   
   return (
     feed && (
-      <div className='flex justify-center my-10'>
-      <Usercard user={feed?.data[0]} />
-    </div>
-    )
-  )
+      <div className='flex justify-center'>
+        <Usercard user={feed[0]} />   
+      </div>
+  ))
 }
 
 export default Feed

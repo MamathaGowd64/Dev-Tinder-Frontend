@@ -18,7 +18,9 @@
 -if token is not present, redirect to login
 -logout
 -profile
-
+-in eslint.config. js -> rules
+        "react/prop-types": "off"//to ignore eslint proptypes missing validation error
+-while making post calls if we don't have any data to post should put {} as a second parameter
 
 
 Body

@@ -9,6 +9,7 @@ const NavBar = () => {
   const user = useSelector((store) => store?.user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  
   const handleLogout = async() => {
     try {
       await axios.post(BASE_URL + "/logout",
@@ -23,9 +24,13 @@ const NavBar = () => {
     }
   }
   return (
-    <div className="navbar bg-base-300">
-    <div className="flex-1">
-      <Link to="/" className="btn btn-ghost text-xl">DevTinder👩‍💻</Link>
+    <div className="navbar bg-base-300 sticky top-0 z-50">
+    <div className="flex-1 justify-between">
+        <Link to="/" className="btn btn-ghost text-xl">DevTinder👩‍💻</Link>
+        {/* <div className='flex justify-end'>
+        <Link to="/"><div className='btn btn-ghost text-xl'>Home</div></Link>
+        <Link to="/login"><div className='btn btn-ghost text-xl'>Login</div></Link>
+        </div> */}
     </div>
       {
         user && (
@@ -48,7 +53,8 @@ const NavBar = () => {
                 <span className="badge">New</span>           
                   </Link>
             </li>
-            <li><a>Settings</a></li>
+                <li><Link to="/user/connections">Connections</Link></li>
+                <li><Link to="/requests">Requests</Link></li>
             <li><a onClick={handleLogout}>Logout</a></li>
           </ul>
         </div>
